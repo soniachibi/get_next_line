@@ -6,7 +6,7 @@
 /*   By: schibi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 21:18:33 by schibi            #+#    #+#             */
-/*   Updated: 2016/12/06 21:48:16 by schibi           ###   ########.fr       */
+/*   Updated: 2016/12/07 21:46:50 by schibi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define GET_NEXT_LINE_H
 
 
-# define BUFF_SIZE 30
+# define BUFF_SIZE 5 
 
 # include <fcntl.h>
 # include <sys/types.h>

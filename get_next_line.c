@@ -6,12 +6,13 @@
 /*   By: schibi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 01:50:55 by schibi            #+#    #+#             */
-/*   Updated: 2016/12/07 00:03:29 by schibi           ###   ########.fr       */
+/*   Updated: 2016/12/07 23:04:13 by schibi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "get_next_line.h"
-# include <stdio.h>
+#include "get_next_line.h"
+#include <stdio.h>
+#include <string.h>
 
 int		end_of_line(char	*str)
 {
@@ -31,9 +32,9 @@ int		end_of_line(char	*str)
 
 char	*string_append(char	*tmp_buf, char	*buf)
 {
-	int		size;
+//	int		size;
 	char	*tmp;
-	char	*keep;
+	//char	*keep;
 
 	if (tmp_buf == NULL)
 	{
@@ -41,25 +42,29 @@ char	*string_append(char	*tmp_buf, char	*buf)
 		if(!tmp_buf)
 			return(NULL);
 		ft_strcpy(tmp_buf, buf);
-		free(tmp_buf);
+	//	printf("%s", tmp_buf);
+	//	keep = tmp_buf;
+	//	free(tmp_buf);
 		return (tmp_buf);	
 	}
 	if (buf)
 	{
-		size = ft_strlen(tmp_buf) + ft_strlen(buf);
-		tmp = (char *)malloc(sizeof(char) * size + 1);
-		if (!tmp)
-			return (0);
-		ft_strcpy(tmp, tmp_buf);
-		keep = tmp;
-		tmp = ft_strcat(tmp, buf);
-		free(keep);
+	//	size = ft_strlen(tmp_buf) + ft_strlen(buf);
+	//	tmp = (char *)malloc(sizeof(char) * size + 1);
+	//	if (!tmp)
+	//		return (0);
+	//	ft_strcpy(tmp, tmp_buf);
+	//	free(tmp_buf);
+	//	printf("%s, %s\n", tmp, tmp_buf);
+	//	keep = tmp;
+		tmp = ft_strjoin(tmp_buf, buf);
+		free(tmp_buf);
+	//	free(keep);
 		return (tmp);		
 	}
 	else
 		return (0);
 }
-
 
 int		get_next_line(const int fd, char **line)
 {	
@@ -82,30 +87,31 @@ int		get_next_line(const int fd, char **line)
 		tmp_buf = string_append(tmp_buf, buf);
 		if (!ret)
 		{
-			*line = ft_strsub(tmp_buf, 0, ft_strlen(tmp_buf));
-		if (*tmp_buf)
+				*line = ft_strsub(tmp_buf, 0, ft_strlen(tmp_buf));
+			if (*tmp_buf)
 			{ 
 				free(tmp_buf);
 				tmp_buf = NULL;
 				return (1);
 			}
-		return (0);
+			return (0);
 		}
 	}
 	*line = ft_strsub(tmp_buf, 0, i);
 	tmp_buf = ft_strsub(tmp_buf, i + 1, ft_strlen(tmp_buf) - i);
 	return (1);
 }
-
+/*
 int	main()
 {
 	int		fd;
+	int		ret;
 	char	*line;
 
 	fd = open("sample", O_RDONLY);
-	while (get_next_line(fd, &line) != 0)
+	while ((ret = get_next_line(fd, &line)) != 0)
 	{
-		printf("%s", line);
+		printf("ret:|%d| |%s| cmp:|%d|\n", ret, line, strcmp(line, "efghijkl"));
 	}
 }
-
+*/
