@@ -6,7 +6,7 @@
 /*   By: schibi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/21 07:20:32 by schibi            #+#    #+#             */
-/*   Updated: 2016/12/01 19:20:18 by schibi           ###   ########.fr       */
+/*   Updated: 2016/12/08 18:50:13 by schibi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,5 @@ int					ft_ispunct(int c);
 int					ft_islower(int c);
 int					ft_isxdigit(int c);
 char				*ft_strdup_nl(const char	*str);
-char				*ft_strjoin_nl(const char *s1, const char *s2);
 
 #endif

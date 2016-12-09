@@ -6,7 +6,7 @@
 #    By: schibi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/28 18:35:00 by schibi            #+#    #+#              #
-#    Updated: 2016/12/01 19:19:58 by schibi           ###   ########.fr        #
+#    Updated: 2016/12/08 18:50:06 by schibi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,8 +87,7 @@ SRC= \
 	 ft_ispunct.c\
 	 ft_islower.c\
 	 ft_isxdigit.c\
-	 ft_strdup_nl.c\
-	 ft_strjoin_nl.c\
+	 ft_strdup_nl.c
 
 OBJ= $(SRC:%.c=%.o)
 
